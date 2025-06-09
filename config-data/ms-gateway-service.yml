@@ -17,38 +17,38 @@ spring:
           enabled: true
       routes:
         - id: ms-auth-service
-          uri: lb://ms-auth-service
+          uri: lb://ms-auth
           predicates:
             - Path=/auth/**
 
         - id: ms-categoria-service
-          uri: lb://ms-categoria-service
+          uri: lb://ms-categoria
           predicates:
             - Path=/categorias/**
           filters:
             - AuthFilter
 
         - id: ms-cliente-service
-          uri: lb://ms-cliente-service
+          uri: lb://ms-cliente
           predicates:
             - Path=/api/clientes/**
           filters:
             - AuthFilter
 
         - id: ms-inventario-service
-          uri: lb://ms-inventario-service
+          uri: lb://ms-inventario
           predicates:
             - Path=/api/stock/**
           filters:
             - AuthFilter
 
         - id: ms-producto-service
-          uri: lb://ms-producto-service
+          uri: lb://ms-producto
           predicates:
-            - Path=/api/productos/**
+            - Path=/productos/**
 
         - id: ms-venta-service
-          uri: lb://ms-venta-service
+          uri: lb://ms-venta
           predicates:
             - Path=/api/ventas/**
           filters:
