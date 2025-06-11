@@ -31,9 +31,8 @@ spring:
         - id: ms-cliente-service
           uri: lb://ms-cliente
           predicates:
-            - Path=/api/clientes/**
-          filters:
-            - AuthFilter
+            - Path=/clientes/**
+
 
         - id: ms-inventario-service
           uri: lb://ms-inventario
@@ -42,10 +41,14 @@ spring:
           filters:
             - AuthFilter
 
+
         - id: ms-producto-service
           uri: lb://ms-producto
           predicates:
             - Path=/productos/**
+          filters:
+            - AuthFilter
+
 
         - id: ms-venta-service
           uri: lb://ms-venta
